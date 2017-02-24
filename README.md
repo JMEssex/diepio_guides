@@ -21,3 +21,9 @@ This is a guide for the game diep.io
 * html
 * css
 * javascript
+
+## stretch goals
+
+* add video
+* add admin / mod / and user base
+* add achievements

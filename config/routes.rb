@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
+
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
-  root to: "users#new"
+  root to: "static_pages#index"
 
   # New user section.
   get    'users/new' =>  'users#new',     as: :new_user
@@ -25,5 +26,9 @@ Rails.application.routes.draw do
 
   get     'guides/:id'      => 'guides#show',   as: :guide
   delete  'guides/:id'      => 'guides#destroy'
+
+
+  # This is for the home page and other static pages.
+  get 'static_pages' => 'static_pages#index'
 
 end

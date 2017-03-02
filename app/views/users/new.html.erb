@@ -1,0 +1,23 @@
+<h1>Sign up</h1>
+
+<%= form_for @user do |f| %>
+  <div>
+    <%= f.label "This is the tale of..." %>
+    <%= f.text_field :user_name, autofocus: true %>
+  </div>
+  <div>
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+  <div>
+    <%= f.label :password %>
+    <%= f.password_field :password %>
+  </div>
+  <div>
+    <%= f.label :password_confirmation %>
+    <%= f.password_field :password_confirmation %>
+  </div>
+  <div>
+    <%= f.submit "Spawn" %>
+  </div>
+<% end %>

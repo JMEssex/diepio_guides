@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170227202414) do
+ActiveRecord::Schema.define(version: 20170302023054) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -33,11 +33,12 @@ ActiveRecord::Schema.define(version: 20170227202414) do
     t.integer  "movement_speed"
     t.datetime "created_at",         null: false
     t.datetime "updated_at",         null: false
+    t.integer  "guide_id"
+    t.index ["guide_id"], name: "index_builds_on_guide_id", using: :btree
   end
 
   create_table "guides", force: :cascade do |t|
-    t.string   "guide_name"
-    t.integer  "build_id"
+    t.string   "title"
     t.integer  "tank_id"
     t.boolean  "upgrade_teir2"
     t.boolean  "upgrade_teir3"
@@ -48,9 +49,10 @@ ActiveRecord::Schema.define(version: 20170227202414) do
     t.integer  "achievement_id"
     t.datetime "created_at",       null: false
     t.datetime "updated_at",       null: false
+    t.integer  "user_id"
     t.index ["achievement_id"], name: "index_guides_on_achievement_id", using: :btree
-    t.index ["build_id"], name: "index_guides_on_build_id", using: :btree
     t.index ["tank_id"], name: "index_guides_on_tank_id", using: :btree
+    t.index ["user_id"], name: "index_guides_on_user_id", using: :btree
     t.index ["vote_id"], name: "index_guides_on_vote_id", using: :btree
   end
 
@@ -58,8 +60,10 @@ ActiveRecord::Schema.define(version: 20170227202414) do
     t.string   "name"
     t.integer  "tier"
     t.string   "image"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.boolean  "deprecated?"
+    t.string   "slug"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,9 +84,10 @@ ActiveRecord::Schema.define(version: 20170227202414) do
     t.datetime "updated_at", null: false
   end
 
+  add_foreign_key "builds", "guides"
   add_foreign_key "guides", "achievements"
-  add_foreign_key "guides", "builds"
   add_foreign_key "guides", "tanks"
+  add_foreign_key "guides", "users"
   add_foreign_key "guides", "votes"
   add_foreign_key "users", "tanks"
 end

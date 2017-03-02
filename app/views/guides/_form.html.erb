@@ -1,0 +1,52 @@
+<%= form_for guide do |f| %>
+
+  <%#  f.string   "title" %>
+  <%#  f.integer  "tank_id" %>
+  <%#  f.boolean  "upgrade_teir2" %>
+  <%#  f.boolean  "upgrade_teir3" %>
+  <%#  f.text     "description" %>
+  <%#  f.string   "video" %>
+  <%#  f.integer  "vote_id" %>
+  <%#  f.string   "vote_third_name?" %>
+  <%#  f.integer  "achievement_id" %>
+
+
+  <div class="field">
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+
+  <%# collection_select(object, method, collection, value_method, text_method, %>
+  <%# options = {}, html_options = {}) %>
+
+  <%# %>
+  <div class="dropdown">
+    <%= f.label "This guide is for: " %>
+    <%= f.collection_select(:tank_id, Tank.all.order(:name),:id, :name, include_blank: true) %>
+  </div>
+
+  <div class="field">
+    <%= f.label "Guide Description" %>
+    <%= f.text_area :description %>
+  </div>
+
+  <div class="field">
+    <%= f.label :vote_third_name? %>
+    <%= f.text_field :vote_third_name? %>
+  </div>
+
+  <br>
+  <div class="video">
+    <%= f.label "Video proof of build success?" %>
+    <%= f.text_field :video, class: "proof", placeholder: "youtu.be/##########"%>
+    <p>
+      <strong>ALL SUBMISSIONS MUST NOW BE FULL RECORDINGS (uploaded to YouTube)</strong>
+      <br>
+      Currently we are only allowing the following hosts: "YouTube"
+    </p>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Post Your Guide!"%>
+  </div>
+<% end %>

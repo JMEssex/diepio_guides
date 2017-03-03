@@ -7,10 +7,10 @@ This is a guide database for the game diep.io.  Diep.io is a recently developed 
 ## Links
 
 Link to Trello:
-![Trello](https://trello.com/b/L3MK7bZ9/diep-io-guides)
+[Trello](https://trello.com/b/L3MK7bZ9/diep-io-guides)
 
 Link to Deployed Heroku Weblink:
-![Deployed Heroku Weblink](diepio-guides.herokuapp.com)
+[Deployed Heroku Weblink](diepio-guides.herokuapp.com)
 
 ## Technology Used
 
@@ -35,7 +35,7 @@ Lastly minor styling was implemented using the resources of "Bootstrap" for user
 
 A local copy of Diep.io Guides can be downloaded and installed using the Github repository.
 
-![Diep.io Guides](https://github.com/JMEssex/diepio_guides)
+[Diep.io Guides](https://github.com/JMEssex/diepio_guides)
 
 To install follow the simple steps below.
     1. Open your Terminal for Mac/linux, or favorite "Git Bash" shell for Windows.

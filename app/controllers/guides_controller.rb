@@ -1,5 +1,9 @@
 class GuidesController < ApplicationController
+
+  before_action :set_guide, only: [:show, :edit, :update, :destroy]
+
   def index
+    @guides = Guide.limit(10).order({updated_at: :desc}).all
   end
 
   def new
@@ -7,7 +11,7 @@ class GuidesController < ApplicationController
   end
 
   def create
-    @tank = Tank.find(guide_params[:tank_id])
+    @tank = Tank.find(params[:guide][:tank_id])
     @guide = current_user.guides.new(guide_params)
     @guide.tank = @tank
     if @guide.save
@@ -19,7 +23,6 @@ class GuidesController < ApplicationController
   end
 
   def edit
-    
   end
 
   def update

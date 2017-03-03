@@ -1,20 +1,41 @@
 <h1><%= @guide.title %></h1>
+<h4>Created by:<strong><%= @guide.user.user_name %></strong> | on :<%= @guide.created_at %></h4>
+<div>
+  Tank Type:
+  <h2><%= @guide.tank.name %></h2>
+</div>
+<br>
+<div>
+  Build used:
+  <%= @guide.build_text %>
+</div>
+<p>
+  <%= @guide.description %>
+</p>
+<p>
+  Link to the current Videos:<br>
+  <%= @guide.video %>
+</p>
+
+<%= link_to "Edit this guide!", edit_guide_path(@guide) %>
+<%= link_to "Delete", guide_path, method: :delete, data: { confirm: "Are you sure you want to delete this guide?"} %>
+<%= link_to "Back to the list!", guides_path %>
 
 
 
 
 
 
-
-
-
-
-
-
-<!-- <h1> <%# @irkat.name %> </h1> -->
-
-<!-- <p>This irKat is a <%#= @irkat.fur %> cub responds <%#= @irkat.likes_ruby %> when asked if they liked ruby. Get one now because our shop only has <%#= @irkat.quantity %> left.</p> -->
-
-<%#= link_to "Edit this irkat!", edit_irkat_path(@irkat) %>
-<%#= link_to "Abandon your irKat at the local shelter!", irkat_path, method: :delete, data: { confirm: "Are you sure you want give up this irKat to the shelter, what if it doesn't find a new home? We will spade or neuter any irKat that is left here. **might affect future coding**"} %>
-<%#= link_to "Back to the list!", irkats_path %>
+<%# t.string   "title" %>
+<%# t.integer  "tank_id" %>
+<%# t.boolean  "upgrade_teir2" %>
+<%# t.boolean  "upgrade_teir3" %>
+<%# t.text     "description" %>
+<%# t.string   "video" %>
+<%# t.integer  "vote_id" %>
+<%# t.string   "vote_third_name?" %>
+<%# t.integer  "achievement_id" %>
+<%# t.datetime "created_at",       null: false %>
+<%# t.datetime "updated_at" %>
+<%# t.integer  "user_id" %>
+<%# t.string   "build_text" %>

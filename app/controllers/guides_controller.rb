@@ -15,7 +15,7 @@ class GuidesController < ApplicationController
     @guide = current_user.guides.new(guide_params)
     @guide.tank = @tank
     if @guide.save
-      redirect_to root_path
+      redirect_to :guides
     end
   end
 

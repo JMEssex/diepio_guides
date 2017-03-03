@@ -1,16 +1,5 @@
 <%= form_for guide do |f| %>
 
-  <%#  f.string   "title" %>
-  <%#  f.integer  "tank_id" %>
-  <%#  f.boolean  "upgrade_teir2" %>
-  <%#  f.boolean  "upgrade_teir3" %>
-  <%#  f.text     "description" %>
-  <%#  f.string   "video" %>
-  <%#  f.integer  "vote_id" %>
-  <%#  f.string   "vote_third_name?" %>
-  <%#  f.integer  "achievement_id" %>
-
-
   <div class="field">
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -19,6 +8,11 @@
   <div class="dropdown">
     <%= f.label "This guide is for: " %>
     <%= f.collection_select(:tank_id, Tank.all.order(:name),:id, :name, prompt: true) %>
+  </div>
+  <br>
+  <div class="field">
+    <%= f.label "This area is to post your build. Please use the format #,#,#,#,#,#,#,#"%><br>
+    [<%= f.text_field :build_text, maxlength: 15, placeholder: "Ex: 3,2,0,7,7,7,7,7"%>]
   </div>
   <br>
   <div class="field">

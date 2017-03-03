@@ -34,7 +34,7 @@ class GuidesController < ApplicationController
   private
 
   def guide_params
-    params.require(:guide).permit(:title, :tank_id, :description, :video, :vote_third_name?)
+    params.require(:guide).permit(:title, :tank_id, :description, :build_text, :video, :vote_third_name?)
   end
 
   def set_guide

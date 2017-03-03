@@ -26,9 +26,16 @@ class GuidesController < ApplicationController
   end
 
   def update
+    if @guide.update_attributes(guide_params)
+      redirect_to :guides
+    else
+      render :edit
+    end
   end
 
   def destroy
+    @guide.destroy
+    redirect_to guides_path
   end
 
   private

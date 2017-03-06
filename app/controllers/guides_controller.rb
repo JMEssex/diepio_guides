@@ -11,11 +11,18 @@ class GuidesController < ApplicationController
   end
 
   def create
-    @tank = Tank.find(params[:guide][:tank_id])
-    @guide = current_user.guides.new(guide_params)
-    @guide.tank = @tank
-    if @guide.save
+    if current_user.nil?
+      flash[:notice] = "Whoopsies! Please login to post a guide."
       redirect_to :guides
+    else
+      @tank = Tank.find(params[:guide][:tank_id])
+      @guide = current_user.guides.new(guide_params)
+      @guide.tank = @tank
+      if @guide.save
+        redirect_to :guides
+      else
+        render :edit
+      end
     end
   end
 

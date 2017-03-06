@@ -5,13 +5,13 @@ Rails.application.routes.draw do
   root to: "static_pages#index"
 
   # New user section.
-  get    'users/new' =>  'users#new',     as: :new_user
+  get    'users/new' =>  'users#new',         as: :new_user
   post   'users'     =>  'users#create'
 
   # Login page with form:
   # Create (post) action for when login form is submitted:
   # Delete action to logout:
-  get     'login'   =>  'sessions#new'
+  get     'login'   =>  'sessions#new',        as: :new_session
   post    'login'   =>  'sessions#create'
   delete  'logout'  =>  'sessions#destroy'
 

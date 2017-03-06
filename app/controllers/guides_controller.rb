@@ -13,15 +13,13 @@ class GuidesController < ApplicationController
   def create
     if current_user.nil?
       flash[:notice] = "Whoopsies! Please login to post a guide."
-      redirect_to :guides
+      redirect_to new_session_path
     else
       @tank = Tank.find(params[:guide][:tank_id])
       @guide = current_user.guides.new(guide_params)
       @guide.tank = @tank
       if @guide.save
         redirect_to :guides
-      else
-        render :edit
       end
     end
   end

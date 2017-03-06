@@ -38,19 +38,20 @@ A local copy of Diep.io Guides can be downloaded and installed using the Github 
 [Diep.io Guides Github](https://github.com/JMEssex/diepio_guides)
 
 To install follow the simple steps below.
-    1. Open your Terminal for Mac/linux, or favorite "Git Bash" shell for Windows.
 
-    2. Change Directories into a local directory on your computer you wish to download Diep.io guides to.
+1. Open your Terminal for Mac/linux, or favorite "Git Bash" shell for Windows.
 
-    3. Enter ```git clone https://github.com/JMEssex/diepio_guides.git``` into the terminal or bash shell.
+2. Change Directories into a local directory on your computer you wish to download Diep.io guides to.
 
-    4. In your terminal `cd` into the directory you installed the repo and run the command `bundle` to install the gems.
+3. Enter `git clone https://github.com/JMEssex/diepio_guides.git` into the terminal or bash shell.
 
-    5. Run the command `rails db:create` to create the database.
+4. In your terminal `cd` into the directory you installed the repo and run the command `bundle` to install the gems.
 
-    6. After creating the database, run you favorite local server program or type `rails s` if you have "Ruby on Rails" installed on your computer previously.
+5. Run the command `rails db:create` to create the database.
 
-    7. From here, your web browser should show the database by going to 'http://localhost:3000'
+6. After creating the database, run you favorite local server program or type `rails s` if you have "Ruby on Rails" installed on your computer previously.
+
+7. From here, your web browser should show the database by going to 'http://localhost:3000'
 
 # ERD
 

@@ -44,9 +44,13 @@ To install follow the simple steps below.
 
     3. Enter ```git clone https://github.com/JMEssex/diepio_guides.git``` into the terminal or bash shell.
 
-    4. In your terminal cd into the directory you installed and either run you favorite local server program or type `rails s` if you have "Ruby on Rails" installed on your computer previously.
+    4. In your terminal `cd` into the directory you installed the repo and run the command `rails bundle` to install the gems.
 
-    5. From here, your web browser should show the database by going to 'http://localhost:3000'
+    5. Run the command `rails db:create` to create the database.
+
+    6. After creating the database, run you favorite local server program or type `rails s` if you have "Ruby on Rails" installed on your computer previously.
+
+    7. From here, your web browser should show the database by going to 'http://localhost:3000'
 
 # ERD
 

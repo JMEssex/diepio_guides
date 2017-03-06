@@ -15,7 +15,7 @@ class GuidesController < ApplicationController
     @guide = current_user.guides.new(guide_params)
     @guide.tank = @tank
     if @guide.save
-      redirect_to :guides
+      redirect_to :guide
     end
   end
 
@@ -27,7 +27,7 @@ class GuidesController < ApplicationController
 
   def update
     if @guide.update_attributes(guide_params)
-      redirect_to :guides
+      redirect_to :guide
     else
       render :edit
     end

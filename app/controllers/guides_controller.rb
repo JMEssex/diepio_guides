@@ -12,7 +12,7 @@ class GuidesController < ApplicationController
 
   def create
     @tank = Tank.find(params[:guide][:tank_id])
-    @guide = current_user.guide.new(guide_params)
+    @guide = current_user.guides.new(guide_params)
     @guide.tank = @tank
     if @guide.save
       redirect_to :guides

@@ -44,7 +44,7 @@ To install follow the simple steps below.
 
     3. Enter ```git clone https://github.com/JMEssex/diepio_guides.git``` into the terminal or bash shell.
 
-    4. In your terminal `cd` into the directory you installed the repo and run the command `rails bundle` to install the gems.
+    4. In your terminal `cd` into the directory you installed the repo and run the command `bundle` to install the gems.
 
     5. Run the command `rails db:create` to create the database.
 
